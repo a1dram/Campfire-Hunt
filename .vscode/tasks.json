@@ -1,0 +1,41 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "UEFI: Doctor",
+      "type": "process",
+      "command": "python",
+      "args": ["${workspaceFolder}/scripts/edk2.py", "doctor"],
+      "problemMatcher": []
+    },
+    {
+      "label": "UEFI: Bootstrap BaseTools",
+      "type": "process",
+      "command": "python",
+      "args": ["${workspaceFolder}/scripts/edk2.py", "bootstrap"],
+      "problemMatcher": ["$msCompile"]
+    },
+    {
+      "label": "UEFI: Build DEBUG",
+      "type": "process",
+      "command": "python",
+      "args": ["${workspaceFolder}/scripts/edk2.py", "build", "--target", "DEBUG"],
+      "group": {"kind": "build", "isDefault": true},
+      "problemMatcher": ["$msCompile"]
+    },
+    {
+      "label": "UEFI: Build RELEASE",
+      "type": "process",
+      "command": "python",
+      "args": ["${workspaceFolder}/scripts/edk2.py", "build", "--target", "RELEASE"],
+      "problemMatcher": ["$msCompile"]
+    },
+    {
+      "label": "UEFI: Test game core on Windows",
+      "type": "process",
+      "command": "python",
+      "args": ["${workspaceFolder}/scripts/edk2.py", "test"],
+      "problemMatcher": ["$msCompile"]
+    }
+  ]
+}

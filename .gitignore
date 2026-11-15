@@ -4,10 +4,19 @@
 *.obj
 
 # IDE / editor folders
-.vscode/
+.vscode/*
+!.vscode/tasks.json
 .idea/
 *.user
 
 # OS junk
 Thumbs.db
 .DS_Store
+
+# Generated UEFI workspace and local tools (external EDK II is not submitted)
+/Build/
+/Conf/
+/.qemu/
+/third_party/edk2/
+__pycache__/
+*.pyc
